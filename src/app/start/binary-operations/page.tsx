@@ -1,14 +1,5 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { CodeBlock } from "@/components/ui/code-block"
 
-
-const sampleCode = `int arr1[5] = {1, 2, 3, 4, 5};
-int arr2[5];
-
-for (int i = 0; i < 5; ++i) {
-    arr2[i] = arr1[i];
-}
-`
 export default function DataTypesPage() {
   return (
     <div className="space-y-6">
@@ -22,7 +13,7 @@ export default function DataTypesPage() {
         <li> 4250 秒是几时几分几秒?</li>
         <li>82分3秒是多少秒?</li>
         <li>41小时 20分3秒是多少秒?</li>
-        需要注意的是,这里的"几"均是不小于0且小于 60 的整数我们把它叫做<strong>位权</strong>
+        需要注意的是,这里的&quot;几&quot;均是不小于0且小于 60 的整数我们把它叫做<strong>位权</strong>
         </p>
         <p className="text-muted-foreground mt-2 leading-10">
         我们会发现，时、分、秒之间的进位关系是满六十进一，这种计数方式我们可以称为<strong>六十进制</strong>。而数字 60 也被我们称为六十进制的“基底”。

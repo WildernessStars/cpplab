@@ -1,45 +1,5 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { CodeBlock } from "@/components/ui/code-block"
 
-const dataTypes = [
-  {
-    name:"字符类型",
-    type: "char",
-    bytes: 1,
-    range: "-128~127",
-  },
-  {
-    name:"布尔类型",
-    type: "bool",
-    bytes: 1,
-    range: "取值false或true",
-  },
-  {
-    name:"整型",
-    type: "int",
-    bytes: 4,
-    range: "-2147483648~2147483647",
-  },
-  {
-    name:"长整型",
-    type: "long long",
-    bytes: 8,
-    range: "-2^63~2^63-1",
-  },
-  {
-    name:"双精度浮点型",
-    type: "double",
-    bytes: 8,
-    range: "-1.79*10^308 to 1.79*10^308",
-  },
-]
-const sampleCode = `int arr1[5] = {1, 2, 3, 4, 5};
-int arr2[5];
-
-for (int i = 0; i < 5; ++i) {
-    arr2[i] = arr1[i];
-}
-`
 export default function DataTypesPage() {
   return (
     <div className="space-y-6">
@@ -55,7 +15,7 @@ export default function DataTypesPage() {
         与变量的定义类似，当有多个同一类型的数组需要定义，也可以放在一起。<br></br>
         例如:<CodeBlock code={`int d[100],e[1000];`} language="cpp" />
         </p>
-        <p className="text-muted-foreground mt-2 leading-10">类似于全局变量，我们通常将数组定义在所有函数外边，好处如下:</p>
+        <p className="text-muted-foreground mt-2 leading-10">类似于全局变量，我们通常将数组定义在所有函数外边，好处如下</p>
         
         <li> 定义的元素个数不受限制;</li>
         <li>数组成员的值统一被初始化为 0;</li>
@@ -63,7 +23,7 @@ export default function DataTypesPage() {
         
         <p className="text-muted-foreground mt-2 leading-10">数组名的起名要求和变量类似也要遵循一定的命名规则(同变量命名规则)。</p>
         <p className="text-muted-foreground mt-2 leading-10">数组名后边的【元素个数】是指数组中包含的元素数量，元素个数必须为正整数，或者是结果为正整数的常量表达式，因此 a[360]与 a[60*6]都是定义数组的正确写法。</p>
-        <p className="text-muted-foreground mt-2 leading-10">常量表达式的值表示元素的个数，即数组长度，例如在"int a[10]"中，10表示a数组有 10 个元素。</p>
+        <p className="text-muted-foreground mt-2 leading-10">常量表达式的值表示元素的个数，即数组长度，例如在&quot;int a[10]&quot;中，10表示a数组有 10 个元素。</p>
       </div>
       
       <div>
@@ -81,18 +41,24 @@ export default function DataTypesPage() {
  
         <h1 className="text-3xl font-bold">赋值</h1>
       <p className="text-muted-foreground mt-2 leading-10">用循环语句。不能用等号将一个数组的整体内容直接赋值给另一个数组。</p>
-      <CodeBlock code={sampleCode} language="cpp" />
+      <CodeBlock code={`int arr1[5] = {1, 2, 3, 4, 5};
+int arr2[5];
+
+for (int i = 0; i < 5; ++i) {
+    arr2[i] = arr1[i];
+}
+`} language="cpp" />
 
       </div>
       
       <div>
       <h1 className="text-3xl font-bold">字符数组</h1>
       <p className="text-muted-foreground mt-2 leading-10">字符串长度和数组大小</p>
-      <p className="text-muted-foreground mt-2 leading-10">字符串长度：字符串中实际字符的数量，不包括空字符 '\0'。 </p>
-      <p className="text-muted-foreground mt-2 leading-10">数组大小：数组中所有元素的数量，包括空字符 '\0'。 </p>
+      <p className="text-muted-foreground mt-2 leading-10">字符串长度：字符串中实际字符的数量，不包括空字符 &apos;\0&apos;。 </p>
+      <p className="text-muted-foreground mt-2 leading-10">数组大小：数组中所有元素的数量，包括空字符 &apos;\0&apos;。 </p>
       <CodeBlock code={`char str[] = "GESP";//字符串长度是4，数组大小是5`} language="cpp" />
       
-      <p className="bg-green-400 text-black p-1 leading-10">strlen 和 sizeof 的区别：对于 char str[] = "GESP";，strlen(str) 的结果是4, sizeof(str) 的结果是5</p>
+      <p className="bg-green-400 text-black p-1 leading-10">strlen 和 sizeof 的区别：对于 char str[] = &quot;GESP&quot;;，strlen(str) 的结果是4, sizeof(str) 的结果是5</p>
 
       <h3 className="text-2xl font-bold">&emsp;字符串的比较</h3>
       <CodeBlock code={`char str1[] = "GESP";

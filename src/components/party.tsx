@@ -1,6 +1,6 @@
 "use client"
 
-import confetti from "https://cdn.skypack.dev/canvas-confetti";
+import confetti from "canvas-confetti";
 import { useEffect } from "react"
 
 export function Party() {

@@ -77,8 +77,8 @@ export default function DataTypesPage() {
           <li>小写字母 a~z &emsp; 对应 ASCII码:97~122</li>
         
         <p>由于所有数字和字母在 ASCII 码表中是连续的。例如:</p>
-        <p>0'是 48,'1'是 49,…,'9'是57;</p>
-        <p>a'是97,b'是 98,'c'是 99..</p>
+        <p>&apos;0&apos;是 48,&apos;1&apos;是 49,…,&apos;9&apos;是57;</p>
+        <p>&apos;a&apos;是97,&apos;b&apos;是 98,&apos;c&apos;是 99..</p>
         <p>因此我们只需要记住数字和大小写字母的开头，即可推算出所有数字、字母的 ASCII码。</p>
         </div>
     <div>

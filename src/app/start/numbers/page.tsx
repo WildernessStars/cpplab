@@ -1,45 +1,4 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { CodeBlock } from "@/components/ui/code-block"
 
-const dataTypes = [
-  {
-    name:"字符类型",
-    type: "char",
-    bytes: 1,
-    range: "-128~127",
-  },
-  {
-    name:"布尔类型",
-    type: "bool",
-    bytes: 1,
-    range: "取值false或true",
-  },
-  {
-    name:"整型",
-    type: "int",
-    bytes: 4,
-    range: "-2147483648~2147483647",
-  },
-  {
-    name:"长整型",
-    type: "long long",
-    bytes: 8,
-    range: "-2^63~2^63-1",
-  },
-  {
-    name:"双精度浮点型",
-    type: "double",
-    bytes: 8,
-    range: "-1.79*10^308 to 1.79*10^308",
-  },
-]
-const sampleCode = `int arr1[5] = {1, 2, 3, 4, 5};
-int arr2[5];
-
-for (int i = 0; i < 5; ++i) {
-    arr2[i] = arr1[i];
-}
-`
 export default function DataTypesPage() {
   return (
     <div className="space-y-6">

@@ -2,7 +2,14 @@
 
 import { useState } from "react"
 // import Editor from "@monaco-editor/react"
-import Editor from 'react-monaco-editor'
+import dynamic from "next/dynamic";
+
+const CodeEditor = dynamic(
+  () => import('react-monaco-editor'), // 替换为你的组件路径
+  { ssr: false }, // 禁用 SSR
+);
+
+//import Editor from 'react-monaco-editor'
 import { Button } from "@/components/ui/button"
 // import { Party } from "@/components/party"
 import { Loader2 } from "lucide-react"
@@ -36,6 +43,7 @@ export default function CodeChallenge() {
       setOutput(data.output)
       setIsSuccess(data.output.trim() === "abc")
     } catch (error) {
+      console.log(error)
       setOutput("Compilation error occurred")
     } finally {
       setIsLoading(false)
@@ -52,7 +60,7 @@ export default function CodeChallenge() {
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-4">
           <div className="h-[600px] border rounded-lg overflow-hidden">
-            <Editor
+            <CodeEditor
               height="100%"
               language="cpp"
               theme="vs-dark"
@@ -80,6 +88,8 @@ export default function CodeChallenge() {
           <div className="h-[600px] border rounded-lg p-4 bg-muted relative">
             <h3 className="text-sm font-medium mb-2">Output:</h3>
             <pre className="font-mono text-sm">{output}</pre>
+            {isSuccess}
+
             {/* {isSuccess && <Party />} */}
           </div>
         </div>

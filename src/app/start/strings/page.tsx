@@ -1,13 +1,6 @@
 import { CodeBlock } from "@/components/ui/code-block"
 
 
-const sampleCode = `int arr1[5] = {1, 2, 3, 4, 5};
-int arr2[5];
-
-for (int i = 0; i < 5; ++i) {
-    arr2[i] = arr1[i];
-}
-`
 export default function DataTypesPage() {
   return (
     <div className="space-y-6">
